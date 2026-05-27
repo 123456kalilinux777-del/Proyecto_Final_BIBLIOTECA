@@ -19,11 +19,11 @@
 
 			1. Funcionalidades Básicas 
 				Módulo de Libros 
- 					Registrar libro  
- 					Mostrar libros registrados  
+ 					Registrar libro  
+ 					Mostrar libros registrados  
  					Buscar libro por código o nombre  
 				Módulo de Estudiantes 
- 					Registrar estudiante  
+ 				Registrar estudiante  
  					Mostrar estudiantes registrados  
 				Módulo de Préstamos 
  					Registrar préstamo de libro  
@@ -59,9 +59,9 @@
 	
 	struct Estudiante{
 		
-		vector<string> nombre;
-		vector<string> carrera;
-		vector<string> ci;
+		string nombre;
+		string carrera;
+		string ci;
 		
 	}e1;
 	
@@ -87,29 +87,25 @@
 		cout << "			biblioteca"<<endl;	
 		
 		
-		vector <string> estudiante={"felipe","luciana","fernando","brenda"};
+		string estudiante[4]={"felipe","luciana","fernando","brenda"};
 		
 		
 		cout << "	Ingrese el nombre del estudiante: ";
-			//cin >> e1.nombre;
-		//vamos
-		bool bandera = 'F';
+		cin >> e1.nombre;
+		bool bandera = false;
 		
-		for (int i = 0; i<estudiante.size();i++){
-			
-			int validacion= (e1.nombre== estudiante);
+		for (int i = 0; i < 4; i++){
+			if (e1.nombre == estudiante[i]){
+				cout << "El nombre del estudiante esta registrado en la base de datos" << endl;
+				bandera = true;
+				break;
+			}
+		}
 		
-				if (validacion == 0){
-				
-			cout << "El nombre del estudiante esta registrado en la base de datos"<<endl;
-			
-			bool bandera= 'V';
-			
-			break;
+		if (!bandera) {
+			cout << "No se encontro el nombre" << endl;
 		}
 			
-		}
-			cout<<"No se encontro el nombre"<<endl;
 		
 		
 		return 0;
